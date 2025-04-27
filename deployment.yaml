@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitmetricx-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gitmetricx
+  template:
+    metadata:
+      labels:
+        app: gitmetricx
+    spec:
+      containers:
+      - name: gitmetricx
+        image: mgnegrete24/gitmetricx:latest
+        ports:
+        - containerPort: 8080
