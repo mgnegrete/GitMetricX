@@ -5,7 +5,7 @@ FROM golang:1.24-alpine
 WORKDIR /app
 
 # Copy the Go modules files and install dependencies
-COPY go.mod ./
+COPY go.mod go.sum ./
 RUN go mod tidy
 
 # Copy the source code into the container
